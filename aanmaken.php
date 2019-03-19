@@ -24,16 +24,16 @@
 
        <?php
        if(isset($_POST["submit"])){
-        require("dbcon.php")
+        require("dbcon.php");
        $id = $_POST['id'];
-       $gbr = $_POST['gbr'];
+       $gbr = mysqli_real_escape_string($link, $_POST['gbr']);
        $password = $_POST['password'];
        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO tb_log (id, gbr, ww) VALUES ('".$_POST["id"]."','".$_POST["gbr"]."','".$_POST["$hashWachtwoord"]."');
+        $sql = "INSERT INTO tb_log (id, gbr, ww) VALUES ("", "$gbr", "$hashed_password")";
 
        if (mysqli_query($conn, $sql)) {
-    echo "<script type= 'text/javascript'>alert('Product succesvol toegevoegd!');</script>";
+         echo "<script type= 'text/javascript'>alert('Product succesvol toegevoegd!');</script>";
         } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);
         }
