@@ -13,6 +13,7 @@ $row=mysqli_fetch_array($result);
 </head>
 <body>
 <div class="form-wrapper">
+    <p>backend</p>
     <center><h3>Welcome: <?php echo $row['gbr']; ?> </h3></center>
 	 <div class="reminder">
     <p><a href="logout.php">Log out</a></p>
