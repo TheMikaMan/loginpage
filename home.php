@@ -1,6 +1,6 @@
 <?php
-include('dbcon.php');
-include('session.php');
+include('include/dbcon.php');
+include('include/session.php');
 
 $result=mysqli_query($con, "select * from tb_log where id='$session_id'")or die('Error In Session');
 $row=mysqli_fetch_array($result);
